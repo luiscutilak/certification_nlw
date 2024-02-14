@@ -11,6 +11,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,10 +38,10 @@ public class StudentEntity {
     //Many To Many
     //**********************//
 
-    @OneToMany
+    @OneToMany(mappedBy = "studentEntity")
     private List<CertificationStudentEntity> certificationStudentEntity;
 
-    //  @CreationTimestamp
-    //  private LocalDateTime createdAt;
+     @CreationTimestamp
+     private LocalDateTime createdAt;
 }
 
